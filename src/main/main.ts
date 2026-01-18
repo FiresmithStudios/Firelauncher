@@ -1,8 +1,12 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
 import * as path from 'path';
+import { GitHubService } from './services/github-service';
 
 // Keep a global reference of the window object
 let mainWindow: BrowserWindow | null = null;
+
+// Initialize GitHub service
+const githubService = new GitHubService('FiresmithStudios', 'Firelauncher', 'main');
 
 const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
 
@@ -54,5 +58,30 @@ app.on('window-all-closed', () => {
   }
 });
 
-// IPC handlers will be added here
-// Example: ipcMain.handle('get-apps', async () => { ... });
+// IPC handlers
+ipcMain.handle('github:scan-repository', async () => {
+  try {
+    const apps = await githubService.scanRepository();
+    return { success: true, data: apps };
+  } catch (error: any) {
+    return { success: false, error: error.message };
+  }
+});
+
+ipcMain.handle('github:get-app-metadata', async (_event, category: string, appId: string) => {
+  try {
+    const metadata = await githubService.getAppMetadata(category, appId);
+    return { success: true, data: metadata };
+  } catch (error: any) {
+    return { success: false, error: error.message };
+  }
+});
+
+ipcMain.handle('github:get-version-metadata', async (_event, category: string, appId: string, versionFolder: string) => {
+  try {
+    const metadata = await githubService.getVersionMetadata(category, appId, versionFolder);
+    return { success: true, data: metadata };
+  } catch (error: any) {
+    return { success: false, error: error.message };
+  }
+});

@@ -2,7 +2,7 @@
   "name": "firelauncher",
   "version": "1.0.0",
   "description": "A Windows desktop game and application launcher",
-  "main": "dist-electron/main.js",
+  "main": "dist-electron/main/main.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

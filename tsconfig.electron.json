@@ -5,7 +5,6 @@
     "lib": ["ES2020"],
     "moduleResolution": "node",
     "outDir": "dist-electron",
-    "rootDir": "src/main",
     "noEmit": false,
     "skipLibCheck": true,
     "strict": true,
@@ -14,6 +13,6 @@
     "resolveJsonModule": true,
     "types": ["node"]
   },
-  "include": ["src/main/**/*"],
+  "include": ["src/main/**/*", "src/shared/**/*"],
   "exclude": ["node_modules", "dist", "dist-electron"]
 }
