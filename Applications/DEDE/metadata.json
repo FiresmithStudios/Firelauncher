@@ -1,0 +1,24 @@
+{
+  "id": "DEDE",
+  "title": "Detective",
+  "description": "A Unity-based detective game experience.",
+  "author": "DefaultCompany",
+  "category": "game",
+  "tags": ["detective", "unity", "adventure"],
+  "images": {
+    "icon": "icon.png",
+    "banner": "banner.png",
+    "screenshots": []
+  },
+  "versions": {
+    "0.1": {
+      "folder": "Ver0.1",
+      "releaseDate": "2024-01-01",
+      "changelog": "Initial release"
+    }
+  },
+  "repository": {
+    "owner": "github-username",
+    "repo": "repository-name"
+  }
+}

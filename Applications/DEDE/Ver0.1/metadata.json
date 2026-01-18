@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "executable": "Detective.exe",
+  "executableArgs": [],
+  "workingDirectory": null,
+  "releaseDate": "2024-01-01",
+  "changelog": "Initial release of Detective game",
+  "downloadUrl": "https://github.com/owner/repo/releases/download/Ver0.1/DEDE.zip",
+  "fileSize": 0,
+  "checksum": null,
+  "dependencies": {
+    "directX": "12"
+  },
+  "minimumOsVersion": "Windows 10",
+  "requirements": {
+    "ram": "4GB",
+    "disk": "1GB"
+  }
+}
